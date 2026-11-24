@@ -1,0 +1,33 @@
+{
+  "links": [
+    {
+      "url": "https://math-examples.github.io/html/dictionary.html",
+      "title": "指读宝",
+      "group": "工具"
+    },
+    {
+      "url": "https://math-examples.github.io/text-replacer",
+      "title": "文本替换",
+      "group": "工具"
+    },
+    {
+      "url": "https://youtube.com",
+      "title": "YouTube",
+      "group": "娱乐"
+    },
+    {
+      "url": "https://math-examples.github.io/Binder",
+      "title": "网页合并",
+      "group": "开发"
+    },
+    {
+      "url": "https://math-examples.github.io/merge-files",
+      "title": "文本合并",
+      "group": "工具"
+    }
+  ],
+  "theme": "sunset",
+  "bgImage": "",
+  "searchMode": "bing",
+  "version": 1
+}

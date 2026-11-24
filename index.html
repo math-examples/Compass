@@ -1,16 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome</title>
-  <style>
-    body { font-family: system-ui; max-width: 800px; margin: 4rem auto; padding: 0 2rem; }
-    h1 { color: #0969da; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Compass</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>🚀 Site is live</h1>
-  <p>Push changes to this branch and GitHub Pages updates automatically.</p>
+
+<!-- Noise Texture Overlay -->
+<div class="noise-overlay"></div>
+
+<header>
+    <h1>Compass</h1>
+    <div class="privacy-note" id="privacyNote">🔒 Zero storage. Zero cache. Zero tracking.<br>Data lives only in this session — export to save.</div>
+    <div class="toolbar">
+        <button onclick="openModal('settingsModal')">Settings</button>
+        <button onclick="exportAll()">Export</button>
+        <button onclick="document.getElementById('importFile').click()">Import</button>
+        <input type="file" id="importFile" accept=".json" style="display:none" onchange="importAll(event)">
+    </div>
+</header>
+
+<div class="container" id="app"></div>
+
+<!-- Bottom Search -->
+<div class="search-dock">
+    <div class="search-dock-inner">
+        <form class="search-container" onsubmit="doSearch(event)">
+            <input type="text" id="searchInput" placeholder="Search or enter URL..." autocomplete="off">
+            <button type="submit">&#8594;</button>
+        </form>
+    </div>
+</div>
+
+<!-- Add Link Modal -->
+<div class="modal-overlay" id="addModal">
+    <div class="modal">
+        <h3>Add Link</h3>
+        <input type="url" id="linkUrl" placeholder="https://example.com">
+        <input type="text" id="linkTitle" placeholder="Name (optional)">
+        <input type="text" id="linkGroup" placeholder="Group (e.g. Work)">
+        <div class="modal-actions">
+            <button class="btn-cancel" onclick="closeModal('addModal')">Cancel</button>
+            <button class="btn-add" onclick="addLink()">Add</button>
+        </div>
+    </div>
+</div>
+
+<!-- Settings Modal -->
+<div class="modal-overlay" id="settingsModal">
+    <div class="modal">
+        <h3>Settings</h3>
+        <div class="theme-grid" id="themeGrid">
+            <div class="theme-swatch active" data-theme="silver"><span>Silver</span></div>
+            <div class="theme-swatch" data-theme="indigo"><span>Indigo</span></div>
+            <div class="theme-swatch" data-theme="sky"><span>Sky</span></div>
+            <div class="theme-swatch" data-theme="mono"><span>Mono</span></div>
+            <div class="theme-swatch" data-theme="sunset"><span>Sunset</span></div>
+            <div class="theme-swatch" data-theme="forest"><span>Forest</span></div>
+            <div class="theme-swatch" data-theme="pro"><span>Pro</span></div>
+        </div>
+        <input type="text" id="bgImageUrl" placeholder="Or paste custom image URL...">
+        <div class="search-engine-row">
+            <label><input type="radio" name="sm" value="auto"> Auto</label>
+            <label><input type="radio" name="sm" value="google"> Google</label>
+            <label><input type="radio" name="sm" value="bing"> Bing</label>
+            <label><input type="radio" name="sm" value="baidu"> Baidu</label>
+        </div>
+        <div class="cache-toggle">
+            <input type="checkbox" id="cacheToggle" onchange="toggleCache()">
+            <label for="cacheToggle">Enable local cache (save data in browser)</label>
+        </div>
+        <div class="modal-actions">
+            <button class="btn-danger" onclick="clearCache()" style="margin-right:auto">Clear Cache</button>
+            <button class="btn-cancel" onclick="closeModal('settingsModal')">Done</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
