@@ -239,10 +239,10 @@ window.addEventListener('load', () => {
     document.querySelectorAll('input[name="sm"]').forEach(radio => radio.checked = (radio.value === searchMode));
     
     if (!loadedFromCache || links.length === 0) {
-        fetch('./web-directory.json', { cache: 'no-cache' })
+        fetch('./compass.json', { cache: 'no-cache' })
             .then(r => r.ok ? r.json() : Promise.reject())
             .then(loadDefaultData).catch(() => {
-                fetch('./links.json', { cache: 'no-cache' })
+                fetch('./compass2.json', { cache: 'no-cache' })
                     .then(r => r.ok ? r.json() : Promise.reject())
                     .then(loadDefaultData).catch(() => {});
             });
