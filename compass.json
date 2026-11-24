@@ -24,9 +24,14 @@
       "url": "https://math-examples.github.io/merge-files",
       "title": "文本合并",
       "group": "工具"
+    },
+    {
+      "url": "https://math-examples.github.io/Snipe/",
+      "title": "github抢名",
+      "group": "其它"
     }
   ],
-  "theme": "sunset",
+  "theme": "sky",
   "bgImage": "",
   "searchMode": "bing",
   "version": 1
