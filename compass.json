@@ -39,6 +39,11 @@
       "url": "https://math-examples.github.io/sri-guard/",
       "title": "SRI 校验",
       "group": "开发"
+    },
+    {
+      "url": "https://math-examples.github.io/Stitch/",
+      "title": "图片拼接",
+      "group": "图片"
     }
   ],
   "theme": "sky",
