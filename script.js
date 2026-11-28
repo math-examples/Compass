@@ -239,10 +239,10 @@ window.addEventListener('load', () => {
     document.querySelectorAll('input[name="sm"]').forEach(radio => radio.checked = (radio.value === searchMode));
     
     if (!loadedFromCache || links.length === 0) {
-        fetch('./compass.json', { cache: 'no-cache' })
+        fetch('https://math-examples.github.io/Compass/compass.json', { cache: 'no-cache' })
             .then(r => r.ok ? r.json() : Promise.reject())
             .then(loadDefaultData).catch(() => {
-                fetch('./compass2.json', { cache: 'no-cache' })
+                fetch('./compass.json', { cache: 'no-cache' })
                     .then(r => r.ok ? r.json() : Promise.reject())
                     .then(loadDefaultData).catch(() => {});
             });
