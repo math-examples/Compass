@@ -26,14 +26,19 @@
       "group": "工具"
     },
     {
-      "url": "https://math-examples.github.io/sri-guard/",
-      "title": "SRI检查",
-      "group": "开发"
-    },
-    {
       "url": "https://math-examples.github.io/Snipe/",
       "title": "github查号",
       "group": "其它"
+    },
+    {
+      "url": "https://math-examples.github.io/FileHash/",
+      "title": "文件哈希",
+      "group": "开发"
+    },
+    {
+      "url": "https://math-examples.github.io/sri-guard/",
+      "title": "SRI 校验",
+      "group": "开发"
     }
   ],
   "theme": "sky",
